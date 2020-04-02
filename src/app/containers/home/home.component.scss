@@ -1,0 +1,67 @@
+@import '../../../assets/scss/variables';
+
+.search {
+    padding: 3rem;
+    width: 60%;
+    margin: 11rem auto 3rem;
+    display: flex;
+    position: relative;
+
+    &__label {
+        position: absolute;
+        transform: translate(0rem, 1rem);
+        font-size: 1.2rem;
+        margin-left: 4.5rem;
+        display: block;
+        transition: font-size 0.1s, translate 0.2s;
+        color: $color-grey-dark-3;
+    }
+
+    &__input {
+        color: $color-text;
+        font-size: 1.4rem;
+        border-radius: 4px;
+        padding: 2.4rem 1.5rem 1rem 4.5rem;
+        border: 1px solid rgba($color-text, 0.3);
+        background-color: $color-white;
+        display: block;
+        width: 100%;
+        transition: padding 0.2s;
+
+        &:focus {
+            outline: none;
+            box-shadow: $box-shadow-3;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-3;
+        }
+
+        &:placeholder-shown {
+            padding: 1.7rem 1.5rem 1.7rem 4.5rem;
+            border-radius: 4px;
+        }
+    }
+
+    &__input:placeholder-shown ~ &__label {
+        transform: translate(-1rem, 2rem);
+        font-size: 1.4rem;
+        visibility: hidden;
+    }
+
+    &__icon {
+        position: absolute;
+        left: 4.4rem;
+        order: -1;
+        align-self: center;
+    }
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto 5rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 2.5rem;
+}

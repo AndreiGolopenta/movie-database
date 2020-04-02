@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="container__line container__line--1"></div>
+    <div class="container__line container__line--2"></div>
+    <div class="container__line container__line--3"></div>
+    <div class="container__line container__line--4"></div>
+    <div class="container__image">
+        <img [src]="movie?.Poster" [alt]="movie?.Title" />
+    </div>
+    <div class="container__detail">
+        <div class="container__detail__title">
+            <div
+                [class.container__watchlist--selected]="watchlistStatus"
+                class="container__watchlist"
+                (click)="watchlist()"
+            >
+                <span class="material-icons container__watchlist__icon">
+                    {{ watchlistStatus ? 'done' : 'add' }}
+                </span>
+            </div>
+            <div>
+                <h2>{{ movie?.Title }}</h2>
+                <div class="container__detail__info">
+                    {{ movie?.Year }} | {{ movie?.Rated }} |
+                    {{ movie?.Runtime }} | {{ movie?.Type }}
+                    <span *ngIf="movie?.totalSeasons">
+                        | {{ movie.totalSeasons }} seasons
+                    </span>
+                </div>
+            </div>
+            <div class="container__rating">
+                <span class="material-icons container__rating__star">
+                    grade
+                </span>
+                <div class="container__rating__value">
+                    <div class="container__rating__value__imdb">
+                        {{ movie?.imdbRating }}
+                        <span>/10</span>
+                    </div>
+                    <div class="container__rating__value__votes">
+                        {{ movie?.imdbVotes }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container__plot">
+            {{ movie?.Plot }}
+        </div>
+        <ul class="container__extra-info">
+            <li><strong>Genre: </strong>{{ movie?.Genre }}</li>
+            <li><strong>Director: </strong>{{ movie?.Director }}</li>
+            <li><strong>Stars: </strong>{{ movie?.Actors }}</li>
+            <li><strong>Awards: </strong>{{ movie?.Awards }}</li>
+            <li *ngIf="movie?.Production">
+                <strong>Production: </strong>{{ movie?.Production }}
+            </li>
+            <li *ngIf="movie?.BoxOffice">
+                <strong>Box Office: </strong>{{ movie?.BoxOffice }}
+            </li>
+            <li *ngIf="movie?.DVD">
+                <strong>DVD Release: </strong>{{ movie?.DVD }}
+            </li>
+        </ul>
+    </div>
+</div>

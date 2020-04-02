@@ -1,0 +1,28 @@
+<div class="watchlist">
+    <div class="watchlist__sort-bar">
+        <app-sort-bar 
+            [titles]="(data$ | async).length"
+            [sortByOption]="sortBy$ | async"
+            (sort)="handleSort($event)">
+        </app-sort-bar>
+    </div>
+    <ng-container *ngFor="let movie of data$ | async">
+        <app-detail
+            [movie]="movie"
+            [watchlistStatus]="watchlistStatus"
+            (addRemoveToWatchlist)="handleWatchlist($event)"
+        >
+        </app-detail>
+    </ng-container>
+    <ng-container *ngIf="!(data$ | async).length">
+        <h1>Your Watchlist is empty.</h1>
+        <div class="watchlist__empty-message">
+            Add movies and shows to your Watchlist to keep track of what you
+            want to watch.
+        </div>
+    </ng-container>
+    <div class="button" [routerLink]="['../']">
+        <span class="button__back"></span>
+        <span class="button__front">Go Back</span>
+    </div>
+</div>

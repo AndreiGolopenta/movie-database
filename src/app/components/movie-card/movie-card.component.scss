@@ -1,0 +1,47 @@
+@import '../../../assets/scss/variables';
+
+.card {
+    position: relative;
+    padding: 1.5rem;
+    box-shadow: $box-shadow-3;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: $color-grey-light-3;
+    transition: all 0.2s ease-in-out;
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+    }
+
+    &__name {
+        position: absolute;
+        font-weight: 700;
+        font-size: 2rem;
+        width: calc(100% - 3rem);
+        height: calc(100% - 3rem);
+        top: 1.5rem;
+        left: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.8rem;
+        background-color: rgba($color-dark-1, 0.7);
+        color: $color-white;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: $box-shadow-2;
+
+        .card__name {
+            opacity: 1;
+            border-radius: 4px;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<header class="main-header">
+    <div class="main-header__logo">
+        <div class="main-header__logo__clip-path-1"></div>
+        <div class="main-header__logo__clip-path-2"></div>
+        <h2 class="main-header__logo__text" [routerLink]="['../']">
+            Movie database
+        </h2>
+    </div>
+    <div class="button" [routerLink]="['/watchlist']">
+        <span class="button__back"></span>
+        <span class="button__front">
+            <span class="button__front__icon">
+                <span class="material-icons">add</span>
+            </span>
+            Watchlist
+            <span class="button__front__count">{{ countWatchlist }}</span>
+        </span>
+    </div>
+</header>

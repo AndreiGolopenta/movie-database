@@ -1,0 +1,160 @@
+@import '../../../assets/scss/variables';
+
+.container {
+    display: flex;
+    font-size: 1.6rem;
+    box-shadow: $box-shadow-3;
+    border-radius: 5px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    background-color: $color-grey-light-1;
+
+    &__image {
+        flex: 0 1 18rem;
+        position: relative;
+        z-index: 2;
+
+        img {
+            width: 100%;
+            border-radius: 4px;
+        }
+    }
+
+    &__watchlist {
+        background-color: $color-grey-light-4;
+        height: 4rem;
+        margin-right: 1rem;
+        clip-path: polygon(100% 0%, 100% 52%, 100% 100%, 50% 80%, 0 100%, 0 0);
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+
+        &__icon {
+            margin-top: 0.4rem;
+            padding: 0 0.2rem;
+        }
+
+        &:hover {
+            background-color: rgba($color-grey-light-4, 0.8);
+            transform: scale(1.1);
+        }
+
+        &--selected {
+            background-color: $color-blue-2;
+            color: $color-white;
+
+            &:hover {
+                background-color: rgba($color-blue-2, 0.8);
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__detail {
+        flex: 1;
+        margin-left: 1.5rem;
+
+        &__title {
+            display: flex;
+            align-items: center;
+
+            h2 {
+                font-size: 2.5rem;
+                line-height: 2.5rem;
+                max-width: 35rem;
+            }
+        }
+
+        &__info {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__rating {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+        &__star {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            color: $color-yellow;
+            margin-right: 0.5rem;
+        }
+
+        &__value {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+
+            &__imdb {
+                font-size: 2.5rem;
+                font-weight: 500;
+                margin-bottom: -0.2rem;
+
+                span {
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    margin-left: -0.5rem;
+                }
+            }
+
+            &__votes {
+                font-size: 1.2rem;
+                margin-top: -0.2rem;
+            }
+        }
+    }
+
+    &__plot {
+        margin-top: 1.5rem;
+    }
+
+    &__extra-info {
+        font-size: 1.5rem;
+        list-style-type: none;
+        margin-top: 1rem;
+    }
+
+    &__line {
+        position: absolute;
+        transform: rotate(45deg);
+        height: 10rem;
+        width: 40rem;
+
+        &--1 {
+            background-color: $color-grey;
+            right: 88%;
+            top: 38%;
+           
+        }
+
+        &--2 {
+            background-color: $color-grey-light-4;
+            right: 89%;
+            top: 51%;
+           
+        }
+
+        &--3 {
+            background-color: $color-grey;
+            left: 75%;
+            top: -15%;
+            
+        }
+
+        &--4 {
+            background-color: rgba($color-grey-light-4, 0.7);
+            left: 64%;
+            top: -20%;
+            
+        }
+    }
+}

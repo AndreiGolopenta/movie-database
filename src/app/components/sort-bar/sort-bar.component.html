@@ -1,0 +1,39 @@
+<div class="container" *ngIf="titles">
+    <div class="container__title">
+        <h3>Your Watchlist</h3>
+        <div class="container__title__info">{{ titles }} Titles</div>
+    </div>
+    <form class="container__dropdown" [formGroup]="form" novalidate>
+        <input
+            formControlName="dropdownInput"
+            class="container__dropdown__input"
+            type="text"
+            id="dropdown"
+            readonly
+            #inputElement
+        />
+        <label class="container__dropdown__label" for="dropdown">
+            Sort by:
+            </label>
+        <span
+            class="material-icons container__dropdown__icon"
+            #iconElement
+        >
+            arrow_drop_down
+        </span>
+        <ul class="container__dropdown__list" #listElement>
+            <li
+                *ngFor="let option of options; index as i"
+                class="container__dropdown__list__option"
+                (click)="sortBy(option)"
+            >
+            <span 
+                [ngClass]="'container__dropdown__list__option--' + i"
+                class="material-icons">
+                filter_list
+            </span>
+            <span>{{ option }}</span>
+            </li>
+        </ul>
+    </form>
+</div>

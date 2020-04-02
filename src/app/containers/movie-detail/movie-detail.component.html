@@ -1,0 +1,12 @@
+<div class="detail">
+    <app-detail
+        [movie]="movie$ | async"
+        [watchlistStatus]="watchlistStatus"
+        (addRemoveToWatchlist)="handleWatchlist($event)"
+    >
+    </app-detail>
+    <div class="button" [routerLink]="['../']">
+        <span class="button__back"></span>
+        <span class="button__front">Go Back</span>
+    </div>
+</div>

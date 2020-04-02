@@ -1,0 +1,20 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+
+.detail {
+    padding: 3rem;
+    width: 80rem;
+    margin: 10rem auto 3rem;
+    position: relative;
+    min-height: calc(100vh - 20rem);
+
+    .button {
+        width: 10rem;
+        height: 3.5rem;
+        cursor: pointer;
+        @include button;
+        position: absolute;
+        bottom: -3rem;
+        left: 3rem;
+    }
+}

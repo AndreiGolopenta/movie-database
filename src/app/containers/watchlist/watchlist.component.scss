@@ -1,0 +1,29 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.watchlist {
+    padding: 3rem;
+    width: 80rem;
+    margin: 10rem auto 8rem;
+    position: relative;
+    min-height: calc(100vh - 20rem);
+
+    &__sort-bar {
+        margin-bottom: 3rem;
+    }
+
+    .button {
+        position: absolute;
+        bottom: -3rem;
+        left: 3rem;
+        width: 10rem;
+        height: 3.5rem;
+        cursor: pointer;
+        @include button;
+    }
+
+    &__empty-message {
+        margin-top: 1rem;
+        font-size: 1.4rem;
+    }
+}

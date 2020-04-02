@@ -1,0 +1,19 @@
+<div class="search">
+    <input
+        class="search__input"
+        type="text"
+        id="search-input"
+        placeholder="Search..."
+        #inputSearch
+    />
+    <span class="material-icons search__icon">search</span>
+    <label class="search__label" for="search-input">Search...</label>
+</div>
+
+<div class="container">
+    <app-movie-card 
+        *ngFor="let movie of data$ | async" 
+        [movie]="movie"
+        (selectMovie)="handleSelectMovie($event)">
+    </app-movie-card>
+</div>
