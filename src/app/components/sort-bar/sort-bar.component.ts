@@ -39,25 +39,34 @@ export class SortBarComponent implements OnInit {
 
     @HostListener('window:click', ['$event'])
     dropdown(event: MouseEvent) {
-        const selectInput = this.inputElement.nativeElement as HTMLInputElement;
-        const selectIcon = this.iconElement.nativeElement as HTMLSpanElement;
-        const selectList = this.listElement.nativeElement as HTMLUListElement;
+        if (this.titles) {
+            const selectInput = this.inputElement
+                .nativeElement as HTMLInputElement;
+            const selectIcon = this.iconElement
+                .nativeElement as HTMLSpanElement;
+            const selectList = this.listElement
+                .nativeElement as HTMLUListElement;
 
-        switch (event.target) {
-            case selectInput:
-            case selectIcon: {
-                selectList.classList.toggle('container__dropdown__list--show');
-                selectInput.classList.toggle(
-                    'container__dropdown__input--focus'
-                );
-                return;
-            }
-            default: {
-                selectList.classList.remove('container__dropdown__list--show');
-                selectInput.classList.remove(
-                    'container__dropdown__input--focus'
-                );
-                return;
+            switch (event.target) {
+                case selectInput:
+                case selectIcon: {
+                    selectList.classList.toggle(
+                        'container__dropdown__list--show'
+                    );
+                    selectInput.classList.toggle(
+                        'container__dropdown__input--focus'
+                    );
+                    return;
+                }
+                default: {
+                    selectList.classList.remove(
+                        'container__dropdown__list--show'
+                    );
+                    selectInput.classList.remove(
+                        'container__dropdown__input--focus'
+                    );
+                    return;
+                }
             }
         }
     }
