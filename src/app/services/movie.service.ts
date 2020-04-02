@@ -5,7 +5,7 @@ import { pluck } from 'rxjs/operators';
 import { MovieSearch, MovieById } from '../models/movie.interface';
 
 const API: string = 'http://www.omdbapi.com/';
-const KEY: string = 'apikey=90e18147';
+const KEY: string = '';
 
 @Injectable({
     providedIn: 'root'
